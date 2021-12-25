@@ -83,13 +83,33 @@ html {
     border: none;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 16px;
 }
 /*select language*/
 .select-trans-lang {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     padding: 0 40px;
+    max-width: 416px;
 }
+
 .select-trans-lang__item {
     margin-top: 64px;
+    padding: 0 15px;
+    height: 54px;
+    width: 147px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border: none;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 16px;
+    background-color: #F5FBF3;
 }
 /*content*/
 .content {

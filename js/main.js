@@ -48,15 +48,7 @@ const search = () => {
 }
 
 function renderOutput(data, index) {
-  if ((translateOutput.value || transcriptOutput.value || audioExample.src) !== "") {
-    translateOutput.value = "";
-    transcriptOutput.value = "";
     translateOutput.value = `${data[index].word}`;
     transcriptOutput.value = `${data[index].transcript}`;
-    audioExample.src = `./assets/audio/${translateOutput.value}.wav`
-  } else {
-    translateOutput.value = `${data[index].word}`;
-    transcriptOutput.value = `${data[index].transcript}`;
-    audioExample.src = `./assets/audio/${translateOutput.value}+'wav'`
-  }
+    audioExample.src = `./assets/audio/${translateOutput.value}.wav`;
 }

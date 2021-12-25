@@ -3,13 +3,30 @@ const wordExample = document.querySelector('.word-example')
 const translateOutput = document.querySelector('.translate')
 const transcriptOutput = document.querySelector('.transcription')
 const audioExample = document.querySelector('.audio')
+const transLanguage = document.querySelector('.trans-ordinary')
 
 function ready() {
+  console.log(transLanguage.value)
   const createDatalist = (data) => {
-    data.forEach(({por}) => {
+    if(wordExample.hasChildNodes()) {
+      while(wordExample.firstChild){
+        wordExample.firstChild.remove()
+      }
+    }
+    data.forEach(({por, eng}) => {
       const wordOption = document.createElement("option");
-      wordOption.value = por;
-      wordExample.append(wordOption);
+      switch (transLanguage.value) {
+        case 'por':
+          wordOption.value = por;
+          break
+        case 'eng':
+          wordOption.value = eng;
+          break
+        default:
+          wordOption.value = por;
+          break
+      }
+      wordExample.append(wordOption)
     })
   }
   console.log("Готов к загрузке слов...")
@@ -29,10 +46,13 @@ document.addEventListener("DOMContentLoaded", ready);
 const search = () => {
   const renderItems = (data) => {
     console.log(data);
-    data.forEach(({word, image, audio, por, eng, transcript}, index) => {
-      if (por === wordValue.value) {
-        console.log(data[index].por);
-        renderOutput(data, index)
+    data.forEach(({por, eng}, index) => {
+      if ((transLanguage.value === "por") && (por === wordValue.value)) {
+        console.log("Вывожу...");
+        renderOutput(data, index) //Передаем все данные. Можно только нужные
+      } else if ((transLanguage.value === "eng") && (eng === wordValue.value)) {
+        console.log("Вывожу...");
+        renderOutput(data, index) //Передаем все данные. Можно только нужные
       }
     })
   }

@@ -33,22 +33,22 @@
   </nav>
 </header>
 <main class="main">
+  <section class="select-trans-lang">
+    <select name="#" id="select-trans-lang" class="select-trans-lang__item trans-ordinary" onchange="ready()">
+      <option value="por">Português</option>
+      <option value="eng">English</option>
+    </select>
+    <select name="#" id="select-trans-lang" class="select-trans-lang__item trans-studied">
+      <option value="Guato">Guato</option>
+    </select>
+  </section>
+  <!-- /.select-trans-lang -->
   <section class="search">
     <input class="search__input" type="search" list="word-example" placeholder="digite uma palavra" onchange="search()" onsubmit="search()" autofocus>
     <datalist id="word-example" class="word-example">
     </datalist>
   </section>
   <!-- /.search -->
-  <section class="select-trans-lang">
-    <select name="#" id="select-trans-lang" class="select-trans-lang__item">
-      <option value="Português">Português</option>
-      <option value="English">English</option>
-    </select>
-    <select name="#" id="select-trans-lang" class="select-trans-lang__item">
-      <option value="Guato">Guato</option>
-    </select>
-  </section>
-  <!-- /.select-trans-lang -->
   <section class="content">
     <div class="content__translate">
       <div class="content-translate-container">

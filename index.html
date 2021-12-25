@@ -2,13 +2,36 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="stylesheet" href="./styles/styles.css">
   <script src="./js/main.js" defer></script>
-  <title>Title</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
+  <title>Dictionary</title>
 </head>
 <body>
-<header></header>
+<header class="header">
+  <img src="./images/icons/account.svg" alt="Account">
+  <nav class="header__navbar">
+    <ul class="navbar">
+      <li class="navbar__item item_green">
+        <a class="navbar-item__link">Configurações</a>
+        <img src="./images/icons/settings.svg" alt="">
+      </li>
+      <li class="navbar__item item_green">
+        <select name="select-lang" id="select-lang" class="select-lang">
+          <option disabled value="Lingua">Lingua</option>
+          <option value="POR">POR</option>
+          <option value="ENG">ENG</option>
+        </select>
+      </li>
+      <li class="navbar__item item_green">
+        <a class="navbar-item__link" href="">Entrar</a>
+      </li>
+    </ul>
+  </nav>
+</header>
 <main class="main">
-  <h1 class="main-title">Dictionary</h1>
   <form class=search-form action="" onsubmit="return false">
     <input class="search-form__input" type="search" placeholder="Enter a word">
     <button class="button" onclick="search()">Search</button>

@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
   <title>Dictionary</title>
 </head>
 <body>
@@ -20,9 +21,9 @@
       </li>
       <li class="navbar__item item_green">
         <select name="select-lang" id="select-lang" class="select-lang">
-          <option disabled value="Lingua">Lingua</option>
-          <option value="POR">POR</option>
-          <option value="ENG">ENG</option>
+          <option class="select-lang__item" disabled selected value="Lingua">Lingua</option>
+          <option class="select-lang__item" value="POR">POR</option>
+          <option class="select-lang__item" value="ENG">ENG</option>
         </select>
       </li>
       <li class="navbar__item item_green">
@@ -32,13 +33,51 @@
   </nav>
 </header>
 <main class="main">
-  <form class=search-form action="" onsubmit="return false">
-    <input class="search-form__input" type="search" placeholder="Enter a word">
-    <button class="button" onclick="search()">Search</button>
-  </form>
-  <section class="content"></section>
-
-  <audio class="audio" src="#" controls></audio>
+  <section class="search">
+    <input class="search__input" type="search" list="word-example" placeholder="digite uma palavra" onchange="search()" onsubmit="search()" autofocus>
+    <datalist id="word-example" class="word-example">
+    </datalist>
+  </section>
+  <!-- /.search -->
+  <section class="select-trans-lang">
+    <select name="#" id="select-trans-lang" class="select-trans-lang__item">
+      <option value="Guato">Guato</option>
+    </select>
+    <select name="#" id="select-trans-lang" class="select-trans-lang__item">
+      <option value="Português">Português</option>
+      <option value="English">English</option>
+    </select>
+  </section>
+  <!-- /.select-trans-lang -->
+  <section class="content">
+    <div class="content__translate">
+      <div class="content-translate-container">
+        <span class="block-title">Tradução</span>
+        <input class="translate" type="text" readonly>
+      </div>
+      <div class="content-translate-container">
+        <span class="block-title">Transcrição</span>
+        <input class="transcription" type="text" readonly>
+      </div>
+      <div class="translate-button">
+        <button class="button button__submit">
+          <img src="./images/icons/translation.svg" alt="Translation">
+        </button>
+        <button class="button button__fav">
+          <img src="./images/icons/star.svg" alt="Star">
+        </button>
+      </div>
+    </div>
+    <div class="content__audio">
+      <span class="block-title">Áudio</span>
+      <audio class="audio" src="#" controls></audio>
+    </div>
+    <div class="content__image">
+      <span class="block-title">Imagem</span>
+      <div class="content-image__container"></div>
+    </div>
+  </section>
+  <!-- /.content -->
 </main>
 <footer></footer>
 </body>

@@ -41,6 +41,9 @@ html {
     height: 100px;
     background-color: #BEE4B0;
 }
+.navbar__item:nth-child(2) {
+    padding: 0 25px;
+}
 .navbar-item__link {
     font-family: 'Inter', sans-serif;
     font-weight: 500;
@@ -64,6 +67,101 @@ html {
     font-size: 16px;
     color: #767676;
     border: none;
-    background-color:
-            #BEE4B0;
+    background-color: #BEE4B0;
+}
+/*search-section*/
+.search {
+    display: flex;
+    flex-direction: column;
+    padding: 0 40px;
+}
+.search__input {
+    margin-top: 25px;
+    padding-left: 15px;
+    height: 64px;
+    max-width: available;
+    border: none;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+}
+/*select language*/
+.select-trans-lang {
+    padding: 0 40px;
+}
+.select-trans-lang__item {
+    margin-top: 64px;
+}
+/*content*/
+.content {
+    display: flex;
+    flex-direction: row;
+    padding: 0 40px;
+}
+.content > div:nth-child(-n+3) {
+    padding-top: 68px;
+    margin-right: 40px;
+}
+.block-title {
+    margin-left: 14px;
+    font-family: 'Roboto Slab', serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 18px;
+    color: #B0B0B0
+}
+.content__translate {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2;
+    justify-content: space-between;
+}
+.content-translate-container {
+    display: flex;
+    flex-direction: column;
+}
+.translate,
+.transcription {
+    padding: 0 15px;
+    height: 55px;
+    border: 1px solid #BEE4B0;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 16px;
+    background-color: #EBF6E6;
+}
+.translate-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.button {
+    height: 54px;
+    width: 113px;
+    border: none;
+    border-radius: 8px;
+    background: #BEE4B0;
+}
+.content__audio {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+.audio {
+    border: 1px solid #BEE4B0;
+    border-radius: 25px;
+}
+.content__image {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 3;
+}
+.content-image__container {
+    height: 280px;
+    width: 442px;
+    border: 1px solid #BEE4B0;
+    border-radius: 8px;
+    background-color: #EBF6E6;
 }

@@ -5,6 +5,11 @@ const transcriptOutput = document.querySelector('.transcription')
 const audioExample = document.querySelector('.audio')
 const transLanguage = document.querySelector('.trans-ordinary')
 
+function changeLang() {
+  wordValue.value = ""
+  ready()
+}
+
 function ready() {
   console.log(transLanguage.value)
   const createDatalist = (data) => {
@@ -43,7 +48,7 @@ function ready() {
 }
 document.addEventListener("DOMContentLoaded", ready);
 
-const search = () => {
+function search() {
   const renderItems = (data) => {
     console.log(data);
     data.forEach(({por, eng}, index) => {

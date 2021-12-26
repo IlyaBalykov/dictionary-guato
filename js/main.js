@@ -31,7 +31,9 @@ function ready() {
           wordOption.value = por;
           break
       }
-      wordExample.append(wordOption)
+      if (wordOption.value !== "undefined") {
+        wordExample.append(wordOption)
+      }
     })
   }
   console.log("Готов к загрузке слов...")

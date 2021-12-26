@@ -74,6 +74,6 @@ function search() {
 
 function renderOutput(data, index) {
     translateOutput.value = `${data[index].word}`;
-    transcriptOutput.value = `${data[index].transcript}`;
+    transcriptOutput.value = `${data[index].transcription}`;
     audioExample.src = `./assets/audio/${translateOutput.value}.wav`;
 }

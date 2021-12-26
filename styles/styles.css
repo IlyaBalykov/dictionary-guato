@@ -170,10 +170,7 @@ html {
     flex-direction: column;
     flex-grow: 1;
 }
-.audio {
-    border: 1px solid #BEE4B0;
-    border-radius: 25px;
-}
+
 .content__image {
     display: flex;
     flex-direction: column;

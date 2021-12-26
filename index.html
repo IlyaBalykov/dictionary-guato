@@ -35,17 +35,18 @@
 </header>
 <main class="main">
   <section class="select-trans-lang">
-    <select name="#" id="select-trans-lang" class="select-trans-lang__item trans-ordinary" onchange="changeLang()">
+    <select name="#" id="select-trans-lang-ordinary" class="select-trans-lang__item trans-ordinary" onchange="changeLang()">
       <option value="por">Português</option>
       <option value="eng">English</option>
     </select>
-    <select name="#" id="select-trans-lang" class="select-trans-lang__item trans-studied">
+    <select name="#" id="select-trans-lang-studied" class="select-trans-lang__item trans-studied">
       <option value="Guato">Guato</option>
     </select>
   </section>
   <!-- /.select-trans-lang -->
   <section class="search">
-    <input class="search__input" type="search" list="word-example" placeholder="digite uma palavra" onchange="search()" onsubmit="search()" autofocus>
+    <label class="block-title" for="search__input">Procura de palavras</label>
+    <input id="search__input" class="search__input" type="search" list="word-example" placeholder="digite uma palavra" onchange="search()" onsubmit="search()" autofocus>
     <datalist id="word-example" class="word-example">
     </datalist>
   </section>
@@ -53,12 +54,12 @@
   <section class="content">
     <div class="content__translate">
       <div class="content-translate-container">
-        <span class="block-title">Tradução</span>
-        <input class="translate" type="text" readonly>
+        <label class="block-title" for="translate">Tradução</label>
+        <input id="translate" class="translate" type="text" readonly>
       </div>
       <div class="content-translate-container">
-        <span class="block-title">Transcrição</span>
-        <input class="transcription" type="text" readonly>
+        <label class="block-title" for="transcription">Transcrição</label>
+        <input id="transcription" class="transcription" type="text" readonly>
       </div>
       <div class="translate-button">
         <button class="button button__submit">

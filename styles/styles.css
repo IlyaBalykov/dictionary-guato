@@ -74,10 +74,10 @@ html {
 .search {
     display: flex;
     flex-direction: column;
+    margin-top: 25px;
     padding: 0 40px;
 }
 .search__input {
-    margin-top: 25px;
     padding-left: 15px;
     height: 64px;
     max-width: available;

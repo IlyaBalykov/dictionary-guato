@@ -77,6 +77,7 @@ html {
 .search {
     display: flex;
     flex-direction: column;
+    width: 50%;
     margin-top: 25px;
     padding: 0 40px;
 }
@@ -237,5 +238,11 @@ html {
 @media screen and (max-width: 1340px) {
     .content {
         flex-direction: column;
+    }
+    .content__example {
+        margin-top: 24px;
+    }
+    .search {
+        width: 100%;
     }
 }

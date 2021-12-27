@@ -13,12 +13,13 @@ html {
 *:before {
     box-sizing: inherit;
 }
+/*header*/
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-left: 70px;
-    height: 100px;
+    height: 60px;
     background-color: #E0F2D9;
 }
 .header__navbar {
@@ -39,7 +40,7 @@ html {
     align-items: center;
     padding: 0;
     width: 164px;
-    height: 100px;
+    height: 100%;
     background-color: #BEE4B0;
     cursor: pointer;
 }

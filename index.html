@@ -47,37 +47,63 @@
   <!-- /.select-trans-lang -->
   <section class="search">
     <label class="block-title" for="search__input">Procura de palavras</label>
-    <input id="search__input" class="search__input" type="search" list="word-example" placeholder="digite uma palavra" onchange="search()" onsubmit="search()" autofocus>
+    <input id="search__input" class="search__input" type="search" list="word-example" placeholder="Comece a digitar uma palavra" onchange="search()" onsubmit="search()" autofocus>
     <datalist id="word-example" class="word-example">
     </datalist>
   </section>
   <!-- /.search -->
   <section class="content">
     <div class="content__translate">
-      <div class="content-translate-container">
+      <div class="input-container input-container-translate">
         <label class="block-title" for="translate">Tradução</label>
-        <input id="translate" class="translate" type="text" readonly>
+        <input id="translate" class="translate-input translate" type="text" readonly>
       </div>
-      <div class="content-translate-container">
-        <label class="block-title" for="transcription">Transcrição</label>
-        <input id="transcription" class="transcription" type="text" readonly>
+      <div class="content__audio">
+        <span class="block-title">Áudio</span>
+        <audio class="audio" src="#" preload="metadata" controls></audio>
       </div>
-      <div class="translate-button">
-        <button class="button button__submit">
-          <img src="./images/icons/translation.svg" alt="Translation">
-        </button>
-        <button class="button button__fav">
-          <img src="./images/icons/star.svg" alt="Star">
-        </button>
+      <div class="input-container input-container-phonemics">
+        <label class="block-title" for="phonemics">Representação fonêmica</label>
+        <input id="phonemics" class="translate-input transcription" type="text" readonly>
+      </div>
+      <div class="input-container input-container-phonetics">
+        <label class="block-title" for="phonetics">Representação fonética</label>
+        <input id="phonetics" class="translate-input phonetics" type="text" readonly>
+      </div>
+      <div class="input-container input-container-class">
+        <label class="block-title" for="class">Classe de palavra / classe de morfema</label>
+        <input id="class" class="translate-input class" type="text" readonly>
+      </div>
+      <div class="input-container input-container-semantics">
+        <label class="block-title" for="semantics">Semântica de uma palavra</label>
+        <input id="semantics" class="translate-input semantics" type="text" readonly>
+      </div>
+      <div class="input-container input-container-definition">
+        <label class="block-title" for="definition">Definição de uma palavra</label>
+        <input id="definition" class="translate-input definition" type="text" readonly>
       </div>
     </div>
-    <div class="content__audio">
-      <span class="block-title">Áudio</span>
-      <audio class="audio" src="#" preload="metadata" controls></audio>
-    </div>
-    <div class="content__image">
-      <span class="block-title">Imagem</span>
-      <div class="content-image__container"></div>
+    <div class="content__example">
+      <div class="input-container example-container-transcription">
+        <label class="block-title" for="example-transcription">Exemplo de uso - transcrição</label>
+        <textarea id="example-transcription" class="translate-input example-transcription" rows="2" wrap="soft" readonly></textarea>
+      </div>
+      <div class="input-container example-container-audio">
+        <label class="block-title" for="example-audio">Exemplo de uso - arquivo sonoro</label>
+        <audio id="example-audio" class="content__audio example-audio" controls></audio>
+      </div>
+      <div class="input-container example-container-phonetics">
+        <label class="block-title" for="example-phonetics">Exemplo de uso - representação fonética</label>
+        <textarea id="example-phonetics" class="translate-input example-phonetics" rows="2" wrap="soft" readonly></textarea>
+      </div>
+      <div class="input-container example-container-translation">
+        <label class="block-title" for="example-translation">Exemplo de uso - tradução português</label>
+        <textarea id="example-translation" class="translate-input example-translation" rows="2" wrap="soft" readonly></textarea>
+      </div>
+      <div class="input-container example-container-image">
+        <label class="block-title" for="example-image">Imagem</label>
+        <img id="example-image" class="example-image" src="" alt="Example">
+      </div>
     </div>
   </section>
   <!-- /.content -->

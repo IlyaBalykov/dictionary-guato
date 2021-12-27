@@ -1,7 +1,16 @@
 const wordValue = document.querySelector('.search__input')
 const wordExample = document.querySelector('.word-example')
 const translateOutput = document.querySelector('.translate')
-const transcriptOutput = document.querySelector('.transcription')
+const phoneticsOutput = document.querySelector('.phonetics')
+const phonemicsOutput = document.querySelector('.phonemics')
+const classOutput = document.querySelector('.class')
+const semanticOutput = document.querySelector('.semantics')
+const definitionOutput = document.querySelector('.definition')
+const exTranscriptionOutput = document.querySelector('.example-transcription')
+const exPhoneticsOutput = document.querySelector('.example-phonetics')
+const exTranslateOutput = document.querySelector('.example-translate')
+
+
 const audioExample = document.querySelector('.audio')
 const transLanguage = document.querySelector('.trans-ordinary')
 
@@ -75,7 +84,14 @@ function search() {
 }
 
 function renderOutput(data, index) {
-    translateOutput.value = `${data[index].word}`;
-    transcriptOutput.value = `${data[index].transcription}`;
+    translateOutput.value = `${data[index].translate}`;
+    phoneticsOutput.value = `${data[index].phonetics}`;
+    phonemicsOutput.value = `${data[index].phonemics}`;
+    classOutput.value = `${data[index].class}`;
+    semanticOutput.value = `${data[index].semantics}`;
+    definitionOutput.value = `${data[index].definition}`;
+    exTranscriptionOutput.value = `${data[index].exampleTranscriptionOne}`;
+    exPhoneticsOutput.value = `${data[index].examplePhoneticsOne}`;
+    exTranslateOutput.value = `${data[index].examplePor}`;
     audioExample.src = `./assets/audio/${translateOutput.value}.wav`;
 }

@@ -189,7 +189,6 @@ html {
     font-weight: 500;
     font-style: normal;
     font-size: 16px;
-    line-height: 18px;
     background-color: #EBF6E6;
 }
 .translate-button {
@@ -237,8 +236,10 @@ html {
 }
 .example-transcription,
 .example-phonetics,
-.example-translation {
+.example-translate {
     resize: none;
+    padding: 10px 15px;
+    line-height: 1;
 }
 
 @media screen and (max-width: 1340px) {

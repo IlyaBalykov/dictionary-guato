@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="keywords" content="Guató, dicionário, línguas ameaçadas, línguas indígenas, dictionary, endangered languages, indigenous languages">
   <link rel="stylesheet" href="./styles/styles.css">
   <script src="./js/main.js" defer></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,6 +36,7 @@
   </nav>
 </header>
 <main class="main">
+  <h1 class="dictionary-title">Dicionário multimídia Guató-Português / Português-Guató</h1>
   <section class="select-trans-lang">
     <select name="#" id="select-trans-lang-ordinary" class="select-trans-lang__item trans-ordinary" onchange="changeLang()">
       <option value="por">Português</option>
@@ -57,34 +59,41 @@
   <!-- /.search -->
   <section class="content">
     <div class="content__translate">
-      <div class="input-container input-container-translate">
-        <label class="block-title" for="translate">Tradução</label>
-        <input id="translate" class="translate-input translate" type="text" readonly>
+      <div class="content-translate__main">
+        <div class="input-container input-container-translate">
+          <label class="block-title" for="translate">Tradução</label>
+          <input id="translate" class="translate-input translate" type="text" readonly>
+        </div>
+        <div class="content__audio">
+          <span class="block-title">Áudio</span>
+          <audio class="audio" src="#" preload="metadata" controls></audio>
+        </div>
       </div>
-      <div class="content__audio">
-        <span class="block-title">Áudio</span>
-        <audio class="audio" src="#" preload="metadata" controls></audio>
-      </div>
-      <div class="input-container input-container-phonemics">
-        <label class="block-title" for="phonemics">Representação fonêmica</label>
-        <input id="phonemics" class="translate-input phonemics" type="text" readonly>
-      </div>
-      <div class="input-container input-container-phonetics">
-        <label class="block-title" for="phonetics">Representação fonética</label>
-        <input id="phonetics" class="translate-input phonetics" type="text" readonly>
-      </div>
-      <div class="input-container input-container-class">
-        <label class="block-title" for="class">Classe de palavra / classe de morfema</label>
-        <input id="class" class="translate-input class" type="text" readonly>
-      </div>
-      <div class="input-container input-container-semantics">
-        <label class="block-title" for="semantics">Semântica de uma palavra</label>
-        <input id="semantics" class="translate-input semantics" type="text" readonly>
-      </div>
-      <div class="input-container input-container-definition">
-        <label class="block-title" for="definition">Definição de uma palavra</label>
-        <input id="definition" class="translate-input definition" type="text" readonly>
-      </div>
+      <details class="details-container">
+        <summary class="details-container__title">Análise</summary>
+        <div class="content-translate__grammar">
+          <div class="input-container input-container-phonemics">
+            <label class="block-title" for="phonemics">Representação fonêmica</label>
+            <input id="phonemics" class="translate-input phonemics" type="text" readonly>
+          </div>
+          <div class="input-container input-container-phonetics">
+            <label class="block-title" for="phonetics">Representação fonética</label>
+            <input id="phonetics" class="translate-input phonetics" type="text" readonly>
+          </div>
+          <div class="input-container input-container-class">
+            <label class="block-title" for="class">Classe de palavra / classe de morfema</label>
+            <input id="class" class="translate-input class" type="text" readonly>
+          </div>
+          <div class="input-container input-container-semantics">
+            <label class="block-title" for="semantics">Campo semântico</label>
+            <input id="semantics" class="translate-input semantics" type="text" readonly>
+          </div>
+          <div class="input-container input-container-definition">
+            <label class="block-title" for="definition">Definição de uma palavra</label>
+            <input id="definition" class="translate-input definition" type="text" readonly>
+          </div>
+        </div>
+      </details>
     </div>
     <div class="content__example">
       <div class="input-container example-container-transcription">
@@ -92,16 +101,16 @@
         <textarea id="example-transcription" class="translate-input example-transcription" rows="2" wrap="soft" readonly></textarea>
       </div>
       <div class="input-container example-container-audio">
-        <label class="block-title" for="example-audio">Exemplo de uso - arquivo sonoro</label>
+        <label class="block-title" for="example-audio">Exemplo de uso - áudio</label>
         <audio id="example-audio" class="content__audio example-audio" controls></audio>
-      </div>
-      <div class="input-container example-container-phonetics">
-        <label class="block-title" for="example-phonetics">Exemplo de uso - representação fonética</label>
-        <textarea id="example-phonetics" class="translate-input example-phonetics" rows="2" wrap="soft" readonly></textarea>
       </div>
       <div class="input-container example-container-translation">
         <label class="block-title" for="example-translation">Exemplo de uso - tradução português</label>
         <textarea id="example-translation" class="translate-input example-translate" rows="2" wrap="soft" readonly></textarea>
+      </div>
+      <div class="input-container example-container-phonetics">
+        <label class="block-title" for="example-phonetics">Exemplo de uso - representação fonética</label>
+        <textarea id="example-phonetics" class="translate-input example-phonetics" rows="2" wrap="soft" readonly></textarea>
       </div>
       <div class="input-container example-container-image">
         <label class="block-title" for="example-image">Imagem</label>

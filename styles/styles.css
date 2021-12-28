@@ -179,7 +179,8 @@ html {
     font-weight: normal;
     font-size: 18px;
     line-height: 24px;
-    color: #B0B0B0
+    color: #B0B0B0;
+    cursor: pointer;
 }
 .content-translate__grammar {
     display: grid;
@@ -260,7 +261,7 @@ html {
 }
 .example-image {
     min-width: 200px;
-    min-height: 150px;
+    min-height: 160px;
     max-width: 300px;
     border: 1px solid #BEE4B0;
     border-radius: 8px;

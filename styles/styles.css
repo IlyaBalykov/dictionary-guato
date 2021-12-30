@@ -39,7 +39,7 @@ html {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 0;
+    padding: 0 10px;
     width: 164px;
     height: 100%;
     background-color: #BEE4B0;
@@ -68,6 +68,7 @@ html {
     font-style: normal;
     font-size: 16px;
     color: #767676;
+    text-align: center;
     border: none;
     background-color: #BEE4B0;
     cursor: pointer;
@@ -99,6 +100,11 @@ html {
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     border: none;
     border-radius: 8px;
+    cursor: pointer;
+}
+.button-change:hover {
+    background-color: #F5FBF3;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .25), 0 0 10px rgba(0, 0, 0, .25), 0 0 20px rgba(0, 0, 0, .25), 0 0 30px rgba(0, 0, 0, .25);
 }
 .select-trans-lang__item {
     margin-top: 24px;
@@ -113,7 +119,14 @@ html {
     font-style: normal;
     font-size: 16px;
     background-color: #F5FBF3;
+    cursor: pointer;
 }
+
+.select-trans-lang__item:hover {
+    background-color: #F5FBF3;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .25), 0 0 10px rgba(0, 0, 0, .25), 0 0 20px rgba(0, 0, 0, .25), 0 0 30px rgba(0, 0, 0, .25);
+}
+
 /*search-section*/
 .search {
     display: flex;
@@ -123,11 +136,11 @@ html {
     padding: 0 40px;
 }
 .search__input {
-    padding-left: 15px;
+    padding: 0 10px 0 20px;
     height: 64px;
     max-width: available;
     border: none;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, .25);
     border-radius: 8px;
     font-family: 'Inter', sans-serif;
     font-weight: 500;
@@ -286,7 +299,7 @@ html {
         justify-content: center;
     }
     .button-change {
-        margin: 64px 2vw;
+        margin: 24px 2vw;
     }
     .content {
         flex-direction: column;

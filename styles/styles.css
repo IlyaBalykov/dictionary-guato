@@ -273,12 +273,16 @@ html {
     grid-row: 2/4;
 }
 .example-image {
-    min-width: 200px;
-    min-height: 160px;
-    max-width: 300px;
+    display: block;
+    object-fit: contain;
+    width: 160px;
+    height: 160px;
+    position: relative;
     border: 1px solid #BEE4B0;
     border-radius: 8px;
+    text-align: center;
 }
+
 .example-transcription,
 .example-phonetics,
 .example-translate {

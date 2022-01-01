@@ -45,7 +45,7 @@
       <option value="por">Português</option>
       <option value="eng">English</option>
     </select>
-    <button class="button button-change" disabled>
+    <button class="button button-change" onclick="changeTranslate()">
       <img src="./images/icons/arrows-change.svg" alt="Change" class="change-translate">
     </button>
     <select name="#" id="select-trans-lang-studied" class="select-trans-lang__item trans-studied">
@@ -61,7 +61,7 @@
   </section>
   <!-- /.search -->
   <section class="content">
-    <div class="content__translate">
+    <div class="content__translate-to-studied">
       <div class="content-translate__main">
         <div class="input-container input-container-translate">
           <label class="block-title" for="translate">Tradução</label>
@@ -98,7 +98,7 @@
         </div>
       </details>
     </div>
-    <div class="content__example">
+    <div class="content__example-to-studied">
       <div class="input-container example-container-transcription">
         <label class="block-title" for="example-transcription">Exemplo de uso - transcrição</label>
         <textarea id="example-transcription" class="translate-input example-transcription" rows="2" wrap="soft" readonly></textarea>
@@ -118,6 +118,18 @@
       <div class="input-container example-container-image">
         <label class="block-title" for="example-image">Imagem</label>
         <img id="example-image" class="example-image" src="/images/image-coming-soon.jpg" alt="Example">
+      </div>
+    </div>
+    <div class="content__translate-to-ordinary">
+      <div class="translate-to-ordinary__container">
+        <div class="input-container input-container-translate">
+          <label class="block-title" for="translate-por">Português</label>
+          <input id="translate-por" class="translate-input translate-por" type="text" readonly>
+        </div>
+        <div class="input-container input-container-translate">
+          <label class="block-title" for="translate-eng">Inglês</label>
+          <input id="translate-eng" class="translate-input translate-eng" type="text" readonly>
+        </div>
       </div>
     </div>
   </section>

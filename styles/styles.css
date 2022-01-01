@@ -94,6 +94,7 @@ html {
     width: 50%;
 }
 .button-change {
+    order: 1;
     width: 140px;
     height: 54px;
     margin-top: 24px;
@@ -246,7 +247,7 @@ html {
     flex-direction: column;
 }
 /*content-example*/
-.content__example {
+.content__example-to-studied {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: max-content;
@@ -295,6 +296,24 @@ html {
 .example-translate {
     background: #BEE4B0;
     border: 1px solid #767676;
+}
+
+.content__translate-to-ordinary{
+    display: none;
+    width: 50%;
+}
+.translate-to-ordinary__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+.input-container-translate {
+    margin-right: 40px; /*сделать отступ паддингом, как в смене языков*/
+}
+.translate-por,
+.translate-eng {
+    background-color: #BEE4B0;
 }
 
 @media screen and (max-width: 1340px) {

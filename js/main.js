@@ -9,17 +9,51 @@ const definitionOutput = document.querySelector('.definition')
 const exTranscriptionOutput = document.querySelector('.example-transcription')
 const exPhoneticsOutput = document.querySelector('.example-phonetics')
 const exTranslateOutput = document.querySelector('.example-translate')
-
-
 const audioExample = document.querySelector('.audio')
 const transLanguage = document.querySelector('.trans-ordinary')
+const transOrdinary = document.querySelector('.trans-ordinary')
+const transStudied = document.querySelector('.trans-studied')
+const transPor = document.querySelector('.translate-por')
+const transEng = document.querySelector('.translate-eng')
 
-function changeLang() {
-  wordValue.value = ""
-  ready()
-}
+let direction = "ordinary-studied";
+
+//сделать одной функцией
+document.addEventListener("DOMContentLoaded", change)
+document.addEventListener("DOMContentLoaded", ready)
 
 function ready() {
+  transOrdinary.style.order = "0";
+  transStudied.style.order = "2";
+}
+
+function changeLang() {
+  change()
+  wordValue.value = ""
+}
+
+function changeTranslate() {
+  console.log("Меняем направление!")
+  wordValue.value = ""
+  $(".content__translate-to-studied").toggle()
+  $(".content__example-to-studied").toggle()
+  $(".content__translate-to-ordinary").toggle()
+
+  if (transOrdinary.style.order === "0") {
+    transOrdinary.style.order = "2";
+    transStudied.style.order = "0";
+    direction = "studied-ordinary";
+    
+  } else {
+    transOrdinary.style.order = "0";
+    transStudied.style.order = "2";
+    direction = "ordinary-studied";
+  }
+  change()
+}
+
+function change() {
+  console.log(direction)
   console.log(transLanguage.value)
   const createDatalist = (data) => {
     if(wordExample.hasChildNodes()) {
@@ -27,18 +61,22 @@ function ready() {
         wordExample.firstChild.remove()
       }
     }
-    data.forEach(({por, eng}) => {
+    data.forEach(({por, eng, translate}) => {
       const wordOption = document.createElement("option");
-      switch (transLanguage.value) {
-        case 'por':
-          wordOption.value = por;
-          break
-        case 'eng':
-          wordOption.value = eng;
-          break
-        default:
-          wordOption.value = por;
-          break
+      if (direction === "ordinary-studied") {
+        switch (transLanguage.value) {
+          case 'por':
+            wordOption.value = por;
+            break
+          case 'eng':
+            wordOption.value = eng;
+            break
+          default:
+            wordOption.value = por;
+            break
+        }
+      } else {
+        wordOption.value = translate;
       }
       if (wordOption.value !== "undefined") {
         wordExample.append(wordOption)
@@ -57,18 +95,23 @@ function ready() {
     })
 
 }
-document.addEventListener("DOMContentLoaded", ready);
 
 function search() {
   const renderItems = (data) => {
     console.log(data);
-    data.forEach(({por, eng}, index) => {
-      if ((transLanguage.value === "por") && (por === wordValue.value)) {
-        console.log("Вывожу...");
-        renderOutput(data, index) //Передаем все данные. Можно только нужные
-      } else if ((transLanguage.value === "eng") && (eng === wordValue.value)) {
-        console.log("Вывожу...");
-        renderOutput(data, index) //Передаем все данные. Можно только нужные
+    data.forEach(({por, eng, translate}, index) => {
+      console.log(direction)
+      if (direction === "ordinary-studied") {
+        if ((transLanguage.value === "por") && (por === wordValue.value)) {
+          console.log("Вывожу...");
+          renderOutput(data, index) //Передаем все данные. Можно только нужные
+        } else if ((transLanguage.value === "eng") && (eng === wordValue.value)) {
+          console.log("Вывожу...");
+          renderOutput(data, index) //Передаем все данные. Можно только нужные
+        }
+      } else {
+        console.log("НАОБОРОТ")
+        renderOutputToOrdinary(data, index)
       }
     })
   }
@@ -94,4 +137,9 @@ function renderOutput(data, index) {
     exPhoneticsOutput.value = `${data[index].examplePhoneticsOne}`;
     exTranslateOutput.value = `${data[index].examplePor}`;
     audioExample.src = `./assets/audio/${translateOutput.value}.wav`;
+}
+
+function renderOutputToOrdinary(data, index) {
+  transPor.value = `${data[index].por}`;
+  transEng.value = `${data[index].eng}`;
 }

@@ -110,8 +110,10 @@ function search() {
           renderOutput(data, index) //Передаем все данные. Можно только нужные
         }
       } else {
-        console.log("НАОБОРОТ")
-        renderOutputToOrdinary(data, index)
+        if (translate === wordValue.value) {
+          console.log("НАОБОРОТ")
+          renderOutputToOrdinary(data, index)
+        }
       }
     })
   }
